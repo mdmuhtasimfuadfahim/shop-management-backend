@@ -19,6 +19,10 @@ const invoiceSchema = mongoose.Schema(
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'Inventory',
     },
+    buyer: {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: 'User',
+    },
     type: {
       type: String,
       default: 0

@@ -4,3 +4,4 @@ module.exports.Product = require('./product.model');
 module.exports.Category = require('./category.model');
 module.exports.Inventory = require('./inventory.model');
 module.exports.Invoice = require('./invoice.model');
+module.exports.Order = require('./order.model');
