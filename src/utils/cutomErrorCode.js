@@ -1,4 +1,6 @@
 const customErrorCode = {
+  "0": "KafkaValidaitonError",
+
   "1001": "TokenError",
   "1002": "UnauthorizedError",
   "4000": "CreateUserError",
@@ -24,6 +26,8 @@ const customErrorCode = {
 
   "7001": "GetInvoicesError",
   "7002": "GetInvoiceByTypeError",
+
+  "8001": "AddOrderError",
 };
 
 module.exports = {
