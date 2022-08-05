@@ -11,6 +11,19 @@ const customErrorCode = {
   "4007": "VerifyEmailError",
   "4008": "UpdateUserByIdError",
   "4009": "DeleteUserByIdError",
+
+  "5001": "AddProductError",
+  "5002": "GetProcductsError",
+  "5003": "GetProcductBySKUError",
+  "5004": "UpdateProcductBySKUError",
+  "5005": "DeleteProcductBySKUError",
+
+  "6001": "GetInventoriesError",
+  "6002": "GetInventoryByIDError",
+  "6003": "UpdateInventoryByIdError",
+
+  "7001": "GetInvoicesError",
+  "7002": "GetInvoiceByTypeError",
 };
 
 module.exports = {
