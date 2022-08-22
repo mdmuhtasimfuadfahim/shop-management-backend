@@ -28,6 +28,8 @@ const customErrorCode = {
   "7002": "GetInvoiceByTypeError",
 
   "8001": "AddOrderError",
+  "8002": "GetOrdersError",
+  "8003": "GetOrderByIDError",
 };
 
 module.exports = {

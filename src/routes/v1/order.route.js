@@ -10,5 +10,10 @@ const router = express.Router();
 router
   .route('/')
   .post(auth('addOrder'), tokenValidation.token, validate(orderValidation.addOrder), orderController.addOrder)
+  .get(auth('getOrder'), tokenValidation.token, orderController.getOrders);
+
+router
+  .route('/:orderId')
+  .get(auth('getOrder'), tokenValidation.token, validate(orderValidation.getOrderById), orderController.getOrderById);
 
 module.exports = router;

@@ -13,7 +13,7 @@ const { authLimiter } = require('./middlewares/rateLimiter');
 const routes = require('./routes/v1');
 const { errorConverter, errorHandler } = require('./middlewares/error');
 const ApiError = require('./utils/ApiError');
-const subcribeEvent = require('./kafka/SubscribeEvent');
+const SubcribeEvent = require('./kafka/SubscribeEvent');
 
 const app = express();
 
@@ -65,5 +65,5 @@ app.use(errorConverter);
 // handle error
 app.use(errorHandler);
 // user kafka for event subscription
-app.use(subcribeEvent);
+app.use(SubcribeEvent);
 module.exports = app;
