@@ -30,6 +30,9 @@ const customErrorCode = {
   "8001": "AddOrderError",
   "8002": "GetOrdersError",
   "8003": "GetOrderByIDError",
+  "8004": "GetCustomerOrdersError",
+  "8005": "UpdateOrderByIDError",
+  "8006": "DeleteOrderByIDError"
 };
 
 module.exports = {

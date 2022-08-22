@@ -14,8 +14,29 @@ const getOrderById = {
   }),
 };
 
+const getAllOrders = {
+  query: Joi.object().keys({
+    product: Joi.string().custom(objectId).optional(),
+    sortBy: Joi.string(),
+    limit: Joi.number().integer(),
+    page: Joi.number().integer(),
+  }),
+};
+
+const updateOrder = {
+  params: Joi.object().keys({
+    orderId: Joi.required().custom(objectId),
+  }),
+  body: Joi.object()
+    .keys({
+      status: Joi.string().required(),
+    }),
+};
+
 module.exports = {
   addOrder,
   getOrderById,
+  getAllOrders,
+  updateOrder,
 };
 

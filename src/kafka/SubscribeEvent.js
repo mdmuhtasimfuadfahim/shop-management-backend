@@ -28,6 +28,12 @@ const SubcribeEvent = async (topic) => {
           data = JSON.parse(message.value);
           validateData(RegisteredEvents.ADD_ORDER, data);
           break;
+        case RegisteredEvents.UPDATE_ORDER_STATUS:
+          validateEvent(RegisteredEvents.UPDATE_ORDER_STATUS);
+          data = JSON.parse(message.value);
+          console.log(data)
+          validateData(RegisteredEvents.UPDATE_ORDER_STATUS, data);
+          break;
         default:
           break;
       }
@@ -35,5 +41,6 @@ const SubcribeEvent = async (topic) => {
   });
 };
 SubcribeEvent(RegisteredTopics.ADMIN);
+SubcribeEvent(RegisteredTopics.CUSTOMER);
 
 module.exports = SubcribeEvent;
