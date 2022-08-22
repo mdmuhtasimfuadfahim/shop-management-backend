@@ -72,14 +72,41 @@ const addOrder = async (orderBody, id) => {
     });
 
     const kafka = await PublishEvent(RegisteredTopics.ADMIN, RegisteredEvents.ADD_ORDER, order);
-    console.log(kafka);
     return order;
   } catch (error) {
     throw new ApiError(8001, 'Cannot add order');
   }
 };
 
+/**
+ * Get orders by buyer id
+ * @param {string} id
+ * @returns {Promise<Order>}
+ */
+ const getOrders = async (id) => {
+  try {
+    return Order.find({ buyer: id }, null, { sort: { 'createdAt': -1 }}).populate(['product']);
+  } catch (error) {
+    throw new ApiError(8002, 'Cannot get orders', error);
+  }
+};
+
+/**
+ * Get order by order id
+ * @param {string} id
+ * @returns {Promise<Order>}
+ */
+ const getOrderById = async (orderId) => {
+  try {
+    return Order.findOne({ _id: orderId }).populate(['product']);
+  } catch (error) {
+    throw new ApiError(8003, `Cannot get order by id ${orderId}`, error);
+  }
+};
+
 
 module.exports = {
   addOrder,
+  getOrders,
+  getOrderById,
 };
