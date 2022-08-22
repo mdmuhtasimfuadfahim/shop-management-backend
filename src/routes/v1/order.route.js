@@ -16,4 +16,16 @@ router
   .route('/:orderId')
   .get(auth('getOrder'), tokenValidation.token, validate(orderValidation.getOrderById), orderController.getOrderById);
 
+
+// admin routes
+router
+  .route('/admin/orders')
+  .get(auth('getOrders'), tokenValidation.token, validate(orderValidation.getAllOrders), orderController.getAllOrders);
+
+router
+  .route('/admin/order/:orderId')
+  .get(auth('manageOrders'), tokenValidation.token, validate(orderValidation.getOrderById), orderController.getOrderById)
+  .patch(auth('manageOrders'), tokenValidation.token, validate(orderValidation.updateOrder), orderController.updateOrder)
+  .delete(auth('manageOrders'), tokenValidation.token, validate(orderValidation.getOrderById), orderController.deleteOrder);
+
 module.exports = router;

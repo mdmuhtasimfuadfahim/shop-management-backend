@@ -1,7 +1,7 @@
 const allRoles = {
   customer: ['addToCart', 'addOrder', 'getOrder'],
   employee: ['getOrders', 'getCustomers', 'getProducts', 'getInvoice'],
-  admin: ['getUsers', 'manageUsers', 'addProduct', 'manageProducts', 'getProducts', 'manageInventory', 'getInventory', 'getInvoice'],
+  admin: ['getUsers', 'manageUsers', 'addProduct', 'manageProducts', 'getProducts', 'manageInventory', 'getInventory', 'getInvoice', 'getOrders', 'manageOrders'],
 };
 
 const roles = Object.keys(allRoles);
